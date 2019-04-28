@@ -490,6 +490,8 @@ void WebSocketsServer::messageReceived(WSclient_t * client, WSopcode_t opcode, u
         case WSop_continuation:
             type = fin ? WStype_FRAGMENT_FIN : WStype_FRAGMENT;
             break;
+	default:
+	    break;
     }
 
     runCbEvent(client->num, type, payload, length);

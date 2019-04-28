@@ -324,9 +324,11 @@ void WebSocketsClient::messageReceived(WSclient_t * client, WSopcode_t opcode, u
         case WSop_binary:
             type = fin ? WStype_BIN : WStype_FRAGMENT_BIN_START;
             break;
-		case WSop_continuation:
-			type = fin ? WStype_FRAGMENT_FIN : WStype_FRAGMENT;
-			break;
+        case WSop_continuation:
+            type = fin ? WStype_FRAGMENT_FIN : WStype_FRAGMENT;
+            break;
+	default:
+	    break;
     }
 
     runCbEvent(type, payload, length);
