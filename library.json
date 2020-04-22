@@ -8,7 +8,7 @@
     },
     "version": "1.0.0",
     "license": "MIT",
-    "frameworks": "arduino",
+    "frameworks": ["arduino", "espidf"],
     "platforms": "espressif32",
     "authors": {
         "name": "Seungchul Lee",
